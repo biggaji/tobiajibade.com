@@ -1,0 +1,33 @@
+{
+  "name": "tobiajibade.com",
+  "version": "1.0.0",
+  "description": "My website portfolio",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "eslint": "7.16.0",
+    "mocha": "8.2.1",
+    "nodemon": "2.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biggaji/tobiajibade.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biggaji/tobiajibade.com/issues"
+  },
+  "homepage": "https://github.com/biggaji/tobiajibade.com#readme"
+}
