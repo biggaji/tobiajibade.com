@@ -1,0 +1,28 @@
+name: deploy web app
+
+# Event to trigger the deploy
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+
+    # can add a stratergy here
+    # strategy:
+    #   matrix:
+    #     node-version: '12.16.1'
+
+    steps:
+    - uses: actions/checkout@v2
+    # These are for testing 
+    # - uses: actions/setup-node@v2
+      # with:
+      #   node-version: ${{matrix.node-version}}
+    - uses: akhileshns/heroku-deploy@v3.8.8
+      with:
+        heroku_api_key: ${{secret.HEROKU_API_KEY}} 
+        heroku_app_name: ${{secret.HEROKU_APP_NAME}}
+        heroku_email: "herityjohnny14@gmail.com"

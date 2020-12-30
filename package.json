@@ -4,18 +4,21 @@
   "description": "My website portfolio",
   "main": "app.js",
   "dependencies": {
-    "aws-sdk": "^2.802.0",
-    "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
-    "mocha": "^8.2.1",
     "redis": "^3.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "4.2.0",
+    "eslint": "7.16.0",
+    "mocha": "8.2.1",
+    "nodemon": "2.0.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon app.js"
+    "devstart": "nodemon app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
