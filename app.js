@@ -4,9 +4,17 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 
+// redis server
+const redis = require("redis");
+
 const indexRouter = require("./routes/index/index");
 // Instanciate the app 
 const app = express();
+
+// instanciate redis client
+// const client = redis.createClient({
+//     port: process.env.REDIS_PORT
+// })
 
 // public configs middleware
 app.use(express.static(path.join(__dirname, "public")));
