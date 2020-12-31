@@ -9,6 +9,7 @@
  $para-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  $background-color-white : #fff;
  $backround-color-gray: #ebeced;
+ $border-color: 1px solid gainsboro;
 
 body {
     width: 100%;
@@ -51,9 +52,15 @@ header {
 
 // hero container 
 .hero_container {
+    width: 100%;
+    height: auto;
+    // margin: 0 auto;
     .hero_text_container {
         .hero_text {
             font-family: $hero-font;
+            color:  #37352f;
+            font-size: 2rem;
+            padding: 20px;
         }
     }
 }
@@ -61,44 +68,60 @@ header {
 // main container style
 
 .container {
-    width: 90%;
+    width: 100%;
     height: auto;
-    margin: 40px auto 20px auto;
+    // margin: 40px auto 20px auto;
     .intro_container {
-        margin: 20px 0;
+        margin: 15px 0;
+        padding: 20px;
         .intro_text {
             font: 0.9rem;
             font-family: $para-font;
         }
     }
     .skill_set{
+        margin: 0 20px;
         .skill_set_heading {
-            font-family: $para-font;
+            font-family: $hero-font;
+            color:  #37352f;
+            line-height: 1.4;
+            font-size: 24px;
         }
     }
     .dev_skills_container {
+        border-bottom: $border-color;
+        border-right: $border-color;
+        border-left: $border-color;
+        padding: 20px;
+        margin: 20px 10px;
+        .h-rule {
+                    color: $border-color;
+                    line-height: 1.4;
+                }
         .skills_container {
             .skill_text_container {
                 .skill_text {
                     font-family: $para-font;
-                    font-size: 0.9rem;
+                    font-size: 1rem;
+                    margin: 15px 0;
                 }
             }
             .skill_images_container{
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                margin: 10px 0;
+                flex-wrap:wrap;
+                margin: 15px 0;
                 .skill_image {
-                    margin: 0 15px 0 0;
+                    margin: 10px 15px 0 0;
                     img {
-                        width: 50px;
-                        height: 50px;
+                        width: 40px;
+                        height: 40px;
                     }
                     .skill_name {
                         .skill_name_text {
                             font-family: $para-font;
-                            font-size: 0.7rem;
+                            font-size: 0.8rem;
                         }
                     }
                 }
@@ -107,16 +130,111 @@ header {
     }
 }
 
+// currently
+.currently_doing_container {
+    margin: 0 20px;
+    .cd_heading_container {
+        .cd_text {
+            font-family: $hero-font;
+            color: #37352f;
+            line-height: 1.4;
+            font-size: 24px;
+        }
+    }
+    .cd_list_container {
+        margin: 0 0 0 30px;
+        list-style-type: disc;
+        .cd_list {
+            // display: block;
+            margin: 7px 0;
+            font-family: $para-font;
+            font-size: 0.9rem;
+            color: #37352f;
+        }
+        .fiverr_username {
+            a {
+            text-decoration: underline;
+            color: black;
+            }
+        }
+        .youtube-channel {
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+// conatct_box 
+.contact_box {
+    margin: 0 20px;
+    .contact_heading {
+        margin: 10px 0;
+        .contact_text {
+            font-family: $hero-font;
+            color:  #37352f;
+            line-height: 1.4;
+            font-size: 24px;
+        }
+    }
+    .contact_how {
+        margin: 0 0 0 10px;
+        .contact_ways {
+            margin: 6px 0;
+            .contact_icon {
+                margin-right: 8px;
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            .contact_icon_desc {
+                font-family: $para-font;
+                font-size: 0.9rem;
+                line-height: 1.4; 
+                color: #37352f;
+                .mail {
+                    color: #37352f;
+                }
+            }
+            .twitter_username {
+                background-color: rgb(88, 88, 235);
+                padding: 2px 4px;
+                color: white;
+                text-decoration: none;
+                border-radius: 3px;
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+}
+.thanks_box {
+    margin: 20px;
+    .thanks_box_text {
+        font-family: $para-font;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
 // footer style
 footer {
+    // margin: 10px 20px;
+    width: 100%;
+    height: auto;
     .social_connect {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .social_list_container {
+            list-style-type: none;
             .social_list {
                 .social_links {
                     text-decoration: none;
                     img {
-                        width: 20px;
-                        height: 20px;
+                        width: 25px;
+                        height: 25px;
                     }
                 }
             }
@@ -130,6 +248,7 @@ footer {
         .farewell_text {
             font-family: $para-font;
             font-size: 0.8rem;
+            line-height: 1.4;
         }
     }
 }
