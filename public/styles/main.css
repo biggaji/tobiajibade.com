@@ -214,4 +214,31 @@ footer .farewell .farewell_text {
   font-size: 0.8rem;
   line-height: 1.4;
 }
+
+@media screen and (min-width: 720px) {
+  .hero_container {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .hero_container .hero_text_container .hero_text {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .dev_skills_container {
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-evenly;
+  }
+  .dev_skills_container .h-rule {
+    display: none;
+  }
+  .dev_skills_container .skills_container .skill_images_container {
+    flex-wrap: wrap;
+  }
+}
 /*# sourceMappingURL=main.css.map */
