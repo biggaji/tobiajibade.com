@@ -95,8 +95,8 @@ header {
         padding: 20px;
         margin: 20px 10px;
         .h-rule {
-                    color: $border-color;
-                    line-height: 1.4;
+            color: $border-color;
+            line-height: 1.4;
                 }
         .skills_container {
             .skill_text_container {
@@ -249,6 +249,36 @@ footer {
             font-family: $para-font;
             font-size: 0.8rem;
             line-height: 1.4;
+        }
+    }
+}
+
+// desktop and table layout
+@media screen and (min-width: 720px) {
+    .hero_container {
+        width: 60%;
+        margin: 0 auto;
+        .hero_text_container {
+            .hero_text {
+                font-size: 2.5rem;
+            }
+        }
+    }
+.container {
+    width: 60%;
+    margin: 0 auto;
+    }
+    .dev_skills_container {
+        display: flex;
+        margin: 20px 0;
+        justify-content: space-evenly;
+        .h-rule {
+            display: none;
+        }
+        .skills_container {
+            .skill_images_container {
+                flex-wrap: wrap;
+            }
         }
     }
 }
