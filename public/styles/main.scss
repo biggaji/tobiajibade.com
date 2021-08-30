@@ -19,8 +19,30 @@ body {
 
 
 // mobile first layout design
+
+.notification-banner {
+        width: 100%;
+        // z-index: 100;
+        height:4.3rem;
+        background-color: #0070c9;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        justify-content: center;
+        position: fixed;
+        top:0;
+        .notification-banner-text {
+            text-align: center;
+            color: #fff;
+            font-family: $para-font;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: 0.025rem;
+        }
+    }
 header {
     width: 100%;
+    margin-top: 70px;
     // height: 45px;
     // background-color: $background-color-white;
     // padding: 0 14px;
@@ -59,6 +81,8 @@ header {
     .hero_text_container {
         .hero_text {
             font-family: $hero-font;
+            line-height: 1.2;
+            letter-spacing: 0.025rem;
             color:  #37352f;
             font-size: 2rem;
             padding: 20px;
@@ -69,6 +93,8 @@ header {
 // main container style
 
 .container {
+    line-height: 1.2;
+    letter-spacing: 0.025rem;
     width: 100%;
     height: auto;
     // margin: 40px auto 20px auto;
@@ -181,7 +207,7 @@ header {
         }
     }
     .contact_how {
-        margin: 0 0 0 10px;
+        margin: 0 0 1rem 10px;
         .contact_ways {
             margin: 6px 0;
             .contact_icon {
@@ -201,12 +227,9 @@ header {
                 }
             }
             .twitter_username {
-                background-color: rgb(88, 88, 235);
-                padding: 2px 4px;
                 color: white;
-                text-decoration: none;
-                border-radius: 3px;
-                margin: 0 0 0 5px;
+                text-decoration: underline;
+                color: #555;
             }
         }
     }
@@ -232,15 +255,15 @@ footer {
         .social_list_container {
             list-style-type: none;
             .social_list {
+                margin: 1rem 0;
                 .social_links {
-                    // background-color: #37352f;
                     padding: 6px;
                     border-radius: 10px;
                     text-decoration: none;
-                    margin: 0 0 0 20px;
+                    margin: 1rem 0 0.5rem 20px;
                     img {
-                        width: 20px;
-                        height: 20px;
+                        width: 30px;
+                        height: 30px;
                     }
                 }
             }
@@ -259,8 +282,11 @@ footer {
     }
 }
 
-// desktop and table layout
+// desktop and tablet layout
 @media screen and (min-width: 720px) {
+        .notification-banner {
+            height: 3rem;
+        }
     .hero_container {
         width: 60%;
         margin: 0 auto;

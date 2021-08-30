@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -10,9 +11,38 @@ body {
   scroll-behavior: auto;
 }
 
+.notification-banner {
+  width: 100%;
+  height: 4.3rem;
+  background-color: #0070c9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+}
+
+.notification-banner .notification-banner-text {
+  text-align: center;
+  color: #fff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.025rem;
+}
+
 header {
   width: 100%;
+  margin-top: 70px;
 }
+
 header nav .logo_text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.9rem;
@@ -23,6 +53,7 @@ header nav .logo_text {
   padding: 2px 4.6px;
   color: #37352f;
 }
+
 header nav .logo_text:hover {
   background-color: #ebeced;
   border-radius: 4px;
@@ -32,34 +63,44 @@ header nav .logo_text:hover {
   width: 100%;
   height: auto;
 }
+
 .hero_container .hero_text_container .hero_text {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.025rem;
   color: #37352f;
   font-size: 2rem;
   padding: 20px;
 }
 
 .container {
+  line-height: 1.2;
+  letter-spacing: 0.025rem;
   width: 100%;
   height: auto;
 }
+
 .container .intro_container {
   margin: 15px 0;
   padding: 20px;
 }
+
 .container .intro_container .intro_text {
   font: 0.9rem;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 .container .skill_set {
   margin: 0 20px;
 }
+
 .container .skill_set .skill_set_heading {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #37352f;
   line-height: 1.4;
   font-size: 24px;
 }
+
 .container .dev_skills_container {
   border-bottom: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -67,29 +108,42 @@ header nav .logo_text:hover {
   padding: 20px;
   margin: 20px 10px;
 }
+
 .container .dev_skills_container .h-rule {
   color: 1px solid gainsboro;
   line-height: 1.4;
 }
+
 .container .dev_skills_container .skills_container .skill_text_container .skill_text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   margin: 15px 0;
 }
+
 .container .dev_skills_container .skills_container .skill_images_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 15px 0;
 }
+
 .container .dev_skills_container .skills_container .skill_images_container .skill_image {
   margin: 10px 15px 0 0;
 }
+
 .container .dev_skills_container .skills_container .skill_images_container .skill_image img {
   width: 40px;
   height: 40px;
 }
+
 .container .dev_skills_container .skills_container .skill_images_container .skill_image .skill_name .skill_name_text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
@@ -98,26 +152,31 @@ header nav .logo_text:hover {
 .currently_doing_container {
   margin: 0 20px;
 }
+
 .currently_doing_container .cd_heading_container .cd_text {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #37352f;
   line-height: 1.4;
   font-size: 24px;
 }
+
 .currently_doing_container .cd_list_container {
   margin: 0 0 0 30px;
   list-style-type: disc;
 }
+
 .currently_doing_container .cd_list_container .cd_list {
   margin: 7px 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.9rem;
   color: #37352f;
 }
+
 .currently_doing_container .cd_list_container .fiverr_username a {
   text-decoration: underline;
   color: black;
 }
+
 .currently_doing_container .cd_list_container .youtube-channel a {
   color: black;
   text-decoration: underline;
@@ -126,49 +185,56 @@ header nav .logo_text:hover {
 .contact_box {
   margin: 0 20px;
 }
+
 .contact_box .contact_heading {
   margin: 10px 0;
 }
+
 .contact_box .contact_heading .contact_text {
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #37352f;
   line-height: 1.4;
   font-size: 24px;
 }
+
 .contact_box .contact_how {
-  margin: 0 0 0 10px;
+  margin: 0 0 1rem 10px;
 }
+
 .contact_box .contact_how .contact_ways {
   margin: 6px 0;
 }
+
 .contact_box .contact_how .contact_ways .contact_icon {
   margin-right: 8px;
 }
+
 .contact_box .contact_how .contact_ways .contact_icon img {
   width: 16px;
   height: 16px;
 }
+
 .contact_box .contact_how .contact_ways .contact_icon_desc {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.9rem;
   line-height: 1.4;
   color: #37352f;
 }
+
 .contact_box .contact_how .contact_ways .contact_icon_desc .mail {
   color: #37352f;
 }
+
 .contact_box .contact_how .contact_ways .twitter_username {
-  background-color: #5858eb;
-  padding: 2px 4px;
   color: white;
-  text-decoration: none;
-  border-radius: 3px;
-  margin: 0 0 0 5px;
+  text-decoration: underline;
+  color: #555;
 }
 
 .thanks_box {
   margin: 20px;
 }
+
 .thanks_box .thanks_box_text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
@@ -179,31 +245,54 @@ footer {
   width: 100%;
   height: auto;
 }
+
 footer .social_connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 footer .social_connect .social_list_container {
   list-style-type: none;
 }
+
+footer .social_connect .social_list_container .social_list {
+  margin: 1rem 0;
+}
+
 footer .social_connect .social_list_container .social_list .social_links {
   padding: 6px;
   border-radius: 10px;
   text-decoration: none;
-  margin: 0 0 0 20px;
+  margin: 1rem 0 0.5rem 20px;
 }
+
 footer .social_connect .social_list_container .social_list .social_links img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
+
 footer .farewell {
   margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 footer .farewell .farewell_text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
@@ -211,6 +300,9 @@ footer .farewell .farewell_text {
 }
 
 @media screen and (min-width: 720px) {
+  .notification-banner {
+    height: 3rem;
+  }
   .hero_container {
     width: 60%;
     margin: 0 auto;
@@ -218,25 +310,30 @@ footer .farewell .farewell_text {
   .hero_container .hero_text_container .hero_text {
     font-size: 2.5rem;
   }
-
   .container {
     width: 60%;
     margin: 0 auto;
   }
-
   .dev_skills_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 20px 0;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .dev_skills_container .h-rule {
     display: none;
   }
   .dev_skills_container .skills_container .skill_images_container {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
+
 .darkmode {
   background-color: #37352f;
   color: #fff;
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */
