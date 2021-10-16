@@ -11,13 +11,16 @@
     "redis": "^3.0.2"
   },
   "devDependencies": {
+    "@types/chai": "4.2.22",
+    "@types/chai-http": "4.2.0",
     "@types/compression": "1.7.0",
     "@types/dotenv": "8.2.0",
     "@types/express": "4.17.12",
     "@types/express-handlebars": "5.3.0",
+    "@types/mocha": "9.0.0",
     "@types/node": "15.12.4",
     "chai": "4.2.0",
-    "eslint": "7.16.0",
+    "chai-http": "4.3.0",
     "mocha": "8.2.1",
     "nodemon": "2.0.6",
     "ts-node": "10.0.0",
