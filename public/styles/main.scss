@@ -1,16 +1,50 @@
 @import './vars';
-* {
+*, ::after, ::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    // border: 0;   
+}
+
+@font-face {
+    font-family: "Atyp text";
+    src: url("./../fonts/AtypText-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Atyp bold";
+    src: url("../fonts/AtypText-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Quincy";
+    src: url("./../fonts/Quincy.woff") format("woff");
 }
 
 body {
     display: block;
-    color: $primary-color;
+    background-color: $body-bg-color;
+    color: $secondary-color;
     font-size: 1.0625rem;
     line-height: 1.5;
-    letter-spacing: -0.01rem;
+    font-family: "Atyp text";
+    letter-spacing: 0.01rem;
+    font-weight: 500;
+}
+
+.quincy-font {
+    font-family: "Quincy", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.inline-link {
+    text-decoration: underline;
+    color: $secondary-color; 
+    &:hover, &:focus {
+        color: $primary-color;
+        text-decoration: none;
+        border-bottom: 1px dotted black;
+        transition: all 0.2s linear;
+    }
 }
 
 // resuable styles
@@ -21,8 +55,64 @@ body {
 }
 .global-container {
     width: 100%;
-    padding: 0 10%;
+    padding: 0 5%;
 }
 .d-flex {
-    display: flex;
+    display: flex !important;
+}
+.section-margin {
+    margin: 5rem 0 !important;
+}
+// links style
+.connect-link-container {
+    // display: flex;
+    justify-content: flex-start;
+    // align-items: flex-start;
+    width: 100%;
+    height: 40px;
+    height: auto;
+    .links {
+        .connect-link {
+            // height: inherit;
+            img {
+                vertical-align: middle;
+                // border: 1px solid red;
+                // width: 100px;
+                height: 25px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+// tech stack
+
+.techstack-container {
+    .techstack-lists {
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.testimonials {
+    .testimonial-card-container {
+        .testimonial-card {
+            position: relative;
+            .testimonial-text {
+                width: 100%;
+                &::before, &::after {
+                    content: "\201C";
+                    font-size: 100px;
+                    color: red;
+                    position: absolute;
+                }
+                &::after {
+                    content: "\201E";
+                    
+                }
+            }
+        }
+    }
 }

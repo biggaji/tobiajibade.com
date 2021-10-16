@@ -19,6 +19,7 @@
     "@types/express-handlebars": "5.3.0",
     "@types/mocha": "9.0.0",
     "@types/node": "15.12.4",
+    "@types/nodemon": "1.19.1",
     "chai": "4.2.0",
     "chai-http": "4.3.0",
     "mocha": "8.2.1",
@@ -28,7 +29,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon app.js",
+    "devstart": "nodemon app.ts",
     "start": "node app.js"
   },
   "repository": {

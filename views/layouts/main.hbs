@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{page_name}}</title>
-    <link rel="stylesheet" href="/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" crossorigin="anonymous">
 
     {{!-- facebook open tags --}}
     <meta property="og:title" content="Tobi Ajibade">
@@ -19,10 +18,7 @@
     {{!-- twitter cards --}}
     <meta name="twitter:site" content="@bigg_aji">
     <meta name="twitter:creator" content="@bigg_aji">
-    <meta name="twitter:title" content="Tobi Ajibade">
-    <meta name="twitter:description" content="Tobi Ajibade is a Software Engineer based in Ibadan, Oyo State, Nigeria.">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:img" content="https://res.cloudinary.com/dahn8uiyc/image/upload/v1615984379/avatar_nmxgti.jpg">
 
     {{!-- google site verification --}}
     <meta name="google-site-verification" content="StqIpyuDkELO9GHIHkMJwVxuOaSDX9dYKTohqRJObLA" />
@@ -32,8 +28,9 @@
     <noscript>You need to enable javascript to view this app</noscript>
     {{> header}}
     {{{body}}}
+    {{>contact_cta_component}}
     {{> footer}}
-    <script src="/scripts/main.js"></script>
+    {{!-- <script src="/scripts/main.js" crossorigin="anonymous"></script> --}}
 </body>
 
 </html>
