@@ -65,6 +65,11 @@ body {
   display: flex !important;
 }
 
+.d-grid {
+  display: -ms-grid !important;
+  display: grid !important;
+}
+
 .section-margin {
   margin: 5rem 0 !important;
 }
@@ -103,9 +108,15 @@ body {
   font-size: 100px;
   color: red;
   position: absolute;
+  font-style: normal;
+}
+
+.testimonials .testimonial-card-container .testimonial-card .testimonial-text::before {
+  left: 0;
 }
 
 .testimonials .testimonial-card-container .testimonial-card .testimonial-text::after {
   content: "\201E";
+  right: 0;
 }
 /*# sourceMappingURL=main.css.map */
