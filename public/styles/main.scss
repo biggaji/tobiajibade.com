@@ -60,6 +60,9 @@ body {
 .d-flex {
     display: flex !important;
 }
+.d-grid {
+    display: grid !important;
+}
 .section-margin {
     margin: 5rem 0 !important;
 }
@@ -107,10 +110,14 @@ body {
                     font-size: 100px;
                     color: red;
                     position: absolute;
+                    font-style: normal;
+                }
+                &::before {
+                    left: 0;
                 }
                 &::after {
                     content: "\201E";
-                    
+                    right: 0;
                 }
             }
         }
