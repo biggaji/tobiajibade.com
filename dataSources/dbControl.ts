@@ -5,6 +5,8 @@
  * @author Tobi Ajibade
  */
 
+import db from "../config";
+
 class DBCOntrol {
     constructor() {}
 
