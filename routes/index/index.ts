@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { index } from '../../controller/index';
+import { index, renderHirePage } from '../../controller/index';
 let indexRouter = Router();
 indexRouter.get("/", index);
+indexRouter.get('/hire', renderHirePage);
 export { indexRouter };
