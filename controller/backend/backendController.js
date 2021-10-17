@@ -8,8 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.contactControl = exports.hireControl = void 0;
+const dbControl_1 = __importDefault(require("../../dataSources/dbControl"));
+let dbcontrol = new dbControl_1.default();
 const hireControl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { employer_name, employer_company, employer_email, budget, launch_timeframe } = req.body;
     let price;
@@ -40,6 +45,13 @@ const hireControl = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             break;
     }
     ;
+    // save data into db
+    try {
+        dbcontrol.processHireRequest(employer_name, employer_email, price, employer_company, timeframe);
+    }
+    catch (e) {
+        console.log(`Failed to process hire form request : `, e.message);
+    }
     res.status(200).json({
         message: "Data received",
         success: true,
@@ -49,6 +61,13 @@ const hireControl = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 exports.hireControl = hireControl;
 const contactControl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { fullname, email, message } = req.body;
+    // SAVE DATA INTO DB
+    try {
+        dbcontrol.processContactRequest(fullname, email, message);
+    }
+    catch (e) {
+        console.log(`Failed to process contact form : `, e.message);
+    }
     res.status(200).json({
         "message": "Data received",
         "success": true,

@@ -1,4 +1,8 @@
 import { Request, Response} from 'express';
+import DBControl from '../../dataSources/dbControl';
+
+let dbcontrol = new DBControl();
+
 export const hireControl = async (req:Request, res:Response) => {
     const { employer_name, employer_company, employer_email, budget, launch_timeframe } = req.body;
     let price:any;
@@ -29,6 +33,13 @@ export const hireControl = async (req:Request, res:Response) => {
         timeframe = "> 2months";
         break;
     };
+    // save data into db
+
+    try {
+        dbcontrol.processHireRequest(employer_name, employer_email, price, employer_company, timeframe);
+    } catch (e:any) {
+        console.log(`Failed to process hire form request : `, e.message)
+    }
 
     res.status(200).json({
       message: "Data received",
@@ -39,6 +50,14 @@ export const hireControl = async (req:Request, res:Response) => {
 
 export const contactControl = async (req: Request, res: Response) => {
     const { fullname, email, message } = req.body;
+
+    // SAVE DATA INTO DB
+    try {
+        dbcontrol.processContactRequest(fullname, email, message);
+    } catch (e:any) {
+        console.log(`Failed to process contact form : `, e.message)
+    }
+
     res.status(200).json({
         "message" : "Data received",
         "success": true,
