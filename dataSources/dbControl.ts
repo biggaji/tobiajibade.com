@@ -5,7 +5,7 @@ let mail = createTransport({
   service: "gmail",
   auth: {
     user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASSWORD,
+    pass: process.env.MAIL_PASS,
   },
 });
 
@@ -95,7 +95,7 @@ class DBControl {
                 console.log(`Mail sent : ${resp.response}`);
               })
               .catch((e) => {
-                console.log("Mail Failed to sent", e);
+                console.log("Mail Failed to send", e);
               });
         };
     };
@@ -103,12 +103,12 @@ class DBControl {
     async notifySender(senderName:string, senderEmail:string) {
         let senderFirstName = senderName.split(" ")[0];
         let mailOptions = {
-            from: `Tobi Ajibade Resume <noreply@bigg-resume.com>`,
+            from: `Tobi Ajibade <noreply@tobiajibade.com>`,
             to: `${senderEmail}`,
             subject: `Thank You For Contacting Me`,
             html: `
-                <p>Hi ${senderFirstName}! thanks for contacting me. I have recieved your message
-                . I will reply you ASAP or as soon as i get see this message.</p>
+                <p>Hi ${senderFirstName}, thanks for contacting me. I have recieved your message
+                . I will reply you ASAP or as soon as i see this message.</p>
                 <p>Best regards!</p>
                 <p>Tobi.</p>
             `
