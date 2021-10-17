@@ -1,0 +1,43 @@
+<main class="global-container">
+    <section class="hmfc">
+        <form action="#" method="post" class="hire-form">
+            <p class="user-greeting">Hey Tobi!</p>
+            <p class="input-sentence">
+                <label for="employer_name">My name is </label><input type="text" name="employer_name" id="employer_name" placeholder="Your fullname">, I work at <input type="text"
+                 name="employer_company" placeholder="Your Company name">
+                 company, and we would like you to work on our project as a back-end engineer. Our project aims to launch in <select name="launch_timeframe">
+                <option>Choose a time frame</option>
+                <option value="less_than_1m">less than 1 month</option>
+                <option value="btw_1-2m">between 1 - 2 months</option>
+                <option value="more_than_2m">more than 2 weeks</option>
+                </select> and we have a budget of 
+                <select name="budget">
+                    <option>Choose a budget</option>
+                    <option value="five-one">$500 - $1000</option>
+                    <option value="one-five">$1000 - $5000</option>
+                    <option value="more-five">more than $5000</option>
+                </select>. You can reach me back via <label for="email">email at </label> <input type="email" name="employer_email" id="email" placeholder="Your email">.
+            </p>
+            <p class="fareware-greeting">
+                Thanks!
+            </p>
+            <div class="hire-submit-box">
+                <button type="submit" disabled>Submit</button>
+            </div>
+        </form>
+
+        {{!-- success message display --}}
+        <div class="success-msg-container">
+            <span class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                    height="24">
+                    <path fill-rule="evenodd"
+                        d="M21.03 5.72a.75.75 0 010 1.06l-11.5 11.5a.75.75 0 01-1.072-.012l-5.5-5.75a.75.75 0 111.084-1.036l4.97 5.195L19.97 5.72a.75.75 0 011.06 0z">
+                    </path>
+                </svg>
+            </span>
+            <p class="success-text">Your message has been sent successfully.</p>
+             <p>I will contact you ASAP. Thanks!</p>
+        </div>
+    </section>
+</main>
