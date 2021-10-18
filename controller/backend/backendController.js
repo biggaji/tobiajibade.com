@@ -38,31 +38,47 @@ const hireControl = async (req, res) => {
     ;
     // save data into db
     try {
-        dbcontrol.processHireRequest(employer_name, employer_email, price, employer_company, timeframe);
+        let saveHireRequest = await dbcontrol.processHireRequest(employer_name, employer_email, price, employer_company, timeframe);
+        console.log(saveHireRequest);
+        if (saveHireRequest) {
+            res.status(201).json({ "success": true });
+        }
+        else {
+            res.status(400).json({ "success": false });
+        }
     }
     catch (e) {
         console.log(`Failed to process hire form request : `, e.message);
+        res.status(500).json({ "server-error": true, "success": false });
     }
-    res.status(200).json({
-        message: "Data received",
-        success: true,
-        data: [employer_name, employer_email, employer_company, price, timeframe],
-    });
+    ;
+    // res.status(200).json({
+    //   message: "Data received",
+    //   success: true,
+    //   data: [employer_name, employer_email, employer_company, price, timeframe],
+    // });
 };
 exports.hireControl = hireControl;
 const contactControl = async (req, res) => {
     const { fullname, email, message } = req.body;
     // SAVE DATA INTO DB
     try {
-        dbcontrol.processContactRequest(fullname, email, message);
+        let saveContactRequest = await dbcontrol.processContactRequest(fullname, email, message);
+        if (saveContactRequest) {
+            res.status(201).json({ success: true });
+        }
+        else {
+            res.status(400).json({ success: false });
+        }
     }
     catch (e) {
         console.log(`Failed to process contact form : `, e.message);
+        res.status(500).json({ "server-error": true, success: false });
     }
-    res.status(200).json({
-        "message": "Data received",
-        "success": true,
-        "data": [fullname, email, message]
-    });
+    // res.status(200).json({
+    //     "message" : "Data received",
+    //     "success": true,
+    //     "data" : [fullname, email, message]
+    // });
 };
 exports.contactControl = contactControl;

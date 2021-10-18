@@ -33,9 +33,10 @@ class DBControl {
             this.notifyMe(fullname, "hire", message, received_at);
 
             this.notifySender(fullname, email);
+            return saveHireRequest.rowCount === 1 ? true : false;
             
         } catch (e) {
-            return e;
+            throw e;
         }
     };
 
@@ -52,8 +53,10 @@ class DBControl {
 
             this.notifySender(fullname, email);
 
+            return saveContactRequest.rowCount === 1 ? true : false;
+
         } catch (e) {
-            return e;
+            throw e;
         }
     }
 
@@ -77,6 +80,7 @@ class DBControl {
             })
             .catch(e => {
                 console.log('Mail Failed to sent', e);
+                throw e;
             });
         } else {
             let mailOptions = {
@@ -96,6 +100,7 @@ class DBControl {
               })
               .catch((e) => {
                 console.log("Mail Failed to send", e);
+                throw e;
               });
         };
     };
@@ -121,6 +126,7 @@ class DBControl {
               })
               .catch((e) => {
                 console.log("Mail Failed to sent", e);
+                throw e;
               });
     };
 };
