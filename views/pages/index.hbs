@@ -255,23 +255,24 @@
     <section class="contact-form-overlay-container">
         <div class="contact-form-container">
             <span class="form-requirement-text">Please fill out the following fields</span>
-            <form action="/b/contact" method="post">
+            <form action="/b/contact" method="post" class="contact-form">
+                <span class="isrequired">Fields with <span class="required-red">*</span> are required</span>
                 <div class="input-clip">
                     <label for="fullname">Fullname <span class="required-red">*</span></label><br>
-                    <input type="text" id="fullname" name="fullname" class="required-field">
+                    <input type="text" id="fullname" name="fullname" class="required-field contact-fullname">
                 </div>
                 <div class="input-clip">
                     <label for="email">Email address <span
                             class="required-red">*</span></label><br>
-                    <input type="email" id="email" name="email" class="required-field">
+                    <input type="email" id="email" name="email" class="required-field contact-email">
                 </div>
                 <div class="input-clip">
                     <label for="msg">Message <span
                             class="required-red">*</span></label><br>
-                    <textarea id="msg" name="message" class="required-field" rows="7"></textarea>
+                    <textarea id="msg" name="message" class="required-field contact-message" rows="7"></textarea>
                 </div>
                 <div class="btn-clip">
-                    <button type="submit">Send message</button>
+                    <button type="submit" class="contact-submit">Send message</button>
                 </div>
             </form>
         </div>
