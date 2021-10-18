@@ -4,25 +4,25 @@
             <p class="user-greeting">Hey Tobi!</p>
             <p class="input-sentence">
                 <label for="employer_name">My name is </label><input type="text" name="employer_name" id="employer_name" placeholder="Your fullname">, I work at <input type="text"
-                 name="employer_company" placeholder="Your Company name">
-                 company, and we would like you to work on our project as a back-end engineer. Our project aims to launch in <select name="launch_timeframe">
+                 name="employer_company" placeholder="Your Company name" id="employer_company">
+                 company, and we would like you to work on our project as a back-end engineer. Our project aims to launch in <select name="launch_timeframe" id="timeframe">
                 <option>Choose a time frame</option>
                 <option value="less_than_1m">less than 1 month</option>
                 <option value="btw_1-2m">between 1 - 2 months</option>
                 <option value="more_than_2m">more than 2 months</option>
                 </select> and we have a budget of 
-                <select name="budget">
+                <select name="budget" id="budget">
                     <option>Choose a budget</option>
                     <option value="five-one">$500 - $1000</option>
                     <option value="one-five">$1000 - $5000</option>
                     <option value="more-five">more than $5000</option>
-                </select>. You can reach me back via <label for="email">email at </label> <input type="email" name="employer_email" id="email" placeholder="Your email">.
+                </select>. You can reach me back via <label for="employer_email">email at </label> <input type="email" name="employer_email" id="employer_email" placeholder="Your email">.
             </p>
             <p class="fareware-greeting">
                 Thanks!
             </p>
             <div class="hire-submit-box">
-                <button type="submit" >Submit</button>
+                <button type="submit" class="hire-submit">Submit</button>
             </div>
         </form>
 
