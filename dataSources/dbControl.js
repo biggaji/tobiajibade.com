@@ -36,7 +36,7 @@ class DBControl {
             VALUES($1,$2,$3,$4,$5) RETURNING *`, [full_name, mail, price, place_of_work, time_frame]);
                 // Alert me , alert sender
                 let { fullname, received_at, email, company, launch_timeframe, budget } = saveHireRequest.rows[0];
-                let message = `Hi! Am ${fullname}, i work for ${company}. Come and work with us for ${launch_timeframe} for a budget of ${budget}. Thanks!`;
+                let message = `Hi, I'm ${fullname}, I work for ${company}. Come and work with us for ${launch_timeframe} for a budget of ${budget}, thanks.`;
                 this.notifyMe(fullname, "hire", message, received_at);
                 this.notifySender(fullname, email);
             }
@@ -98,7 +98,7 @@ class DBControl {
                     console.log(`Mail sent : ${resp.response}`);
                 })
                     .catch((e) => {
-                    console.log("Mail Failed to sent", e);
+                    console.log("Mail Failed to send", e);
                 });
             }
             ;
@@ -114,9 +114,9 @@ class DBControl {
                 subject: `Thank You For Contacting Me`,
                 html: `
                 <p>Hi ${senderFirstName}, thanks for contacting me. I have recieved your message
-                . I will reply you ASAP or as soon as i see this message.</p>
+                . I will reply you ASAP or as soon as I see this message.</p>
                 <p>Best regards!</p>
-                <p>Tobi.</p>
+                <p>Tobi!</p>
             `
             };
             mail
