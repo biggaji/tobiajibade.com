@@ -29,9 +29,10 @@ class DBControl {
             let message = `Hi, I'm ${fullname}, I work for ${company}. Come and work with us for ${launch_timeframe} for a budget of ${budget}, thanks.`;
             this.notifyMe(fullname, "hire", message, received_at);
             this.notifySender(fullname, email);
+            return saveHireRequest.rowCount === 1 ? true : false;
         }
         catch (e) {
-            return e;
+            throw e;
         }
     }
     ;
@@ -43,9 +44,10 @@ class DBControl {
             let { message, fullname, received_at, email } = saveContactRequest.rows[0];
             this.notifyMe(fullname, "contact", message, received_at);
             this.notifySender(fullname, email);
+            return saveContactRequest.rowCount === 1 ? true : false;
         }
         catch (e) {
-            return e;
+            throw e;
         }
     }
     async notifyMe(senderName, requestType, message, sent_at) {
@@ -66,6 +68,7 @@ class DBControl {
             })
                 .catch(e => {
                 console.log('Mail Failed to sent', e);
+                throw e;
             });
         }
         else {
@@ -85,6 +88,7 @@ class DBControl {
             })
                 .catch((e) => {
                 console.log("Mail Failed to send", e);
+                throw e;
             });
         }
         ;
@@ -110,6 +114,7 @@ class DBControl {
         })
             .catch((e) => {
             console.log("Mail Failed to sent", e);
+            throw e;
         });
     }
     ;
