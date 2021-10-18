@@ -2,12 +2,11 @@ import { config  } from 'dotenv';
 if(process.env.NODE_ENV !== "production") {
     config();
 }
-import  express from 'express';
+import  express, { NextFunction, Request, Response } from 'express';
 import  exphbs from 'express-handlebars';
 import path from 'path';
 import { indexRouter } from './routes/index';
 import { backendRouter } from './routes/backend/backendRouters';
-import { NextFunction, Request, Response } from 'express';
 
 const app = express();
 
@@ -30,4 +29,4 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-export default app;
+export {app};

@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -15,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.contactControl = exports.hireControl = void 0;
 const dbControl_1 = __importDefault(require("../../dataSources/dbControl"));
 let dbcontrol = new dbControl_1.default();
-const hireControl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const hireControl = async (req, res) => {
     const { employer_name, employer_company, employer_email, budget, launch_timeframe } = req.body;
     let price;
     let timeframe;
@@ -57,9 +48,9 @@ const hireControl = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         success: true,
         data: [employer_name, employer_email, employer_company, price, timeframe],
     });
-});
+};
 exports.hireControl = hireControl;
-const contactControl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const contactControl = async (req, res) => {
     const { fullname, email, message } = req.body;
     // SAVE DATA INTO DB
     try {
@@ -73,5 +64,5 @@ const contactControl = (req, res) => __awaiter(void 0, void 0, void 0, function*
         "success": true,
         "data": [fullname, email, message]
     });
-});
+};
 exports.contactControl = contactControl;
