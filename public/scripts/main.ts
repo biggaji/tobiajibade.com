@@ -89,6 +89,7 @@ if(allHireRequiredFields) {
 let success_msg_container = document.querySelector(".success-msg-container") as HTMLDivElement;
 let form_err_container = document.querySelector('.form-error-UI') as HTMLDivElement;
 let error_text = document.querySelector(".error-text") as HTMLSpanElement;
+error_text.innerHTML = "Failed to send message, try again!";
 
 // function to show and hide form error message after five seconds
 
@@ -100,7 +101,6 @@ if(contactForm) {
     contactSubmitBtn.addEventListener("click", (e) => {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            // console.log(location.hostname);
             contactSubmitBtn.innerHTML = "submitting..."
             // change btn value to spiner or show global body spinning container
 
@@ -122,19 +122,16 @@ if(contactForm) {
                 body: JSON.stringify(payload)
             })
             .then(res => {
-                // console.log(res)
                 // check if res.ok = true, remove spinning container
                 // else show failed notification or contine spining
                 return res.json();
             })
             .then(finalRes => {
-                console.log(finalRes)
                 //show success message container and hide form container
                 if(finalRes.success === true) {
                     contactForm.style.display = "none";
                     success_msg_container.style.display = "block";
                 } else {
-                    error_text.innerHTML = 'Failed to send message, try again!';
                     form_err_container.style.display = "block";
                     contactForm.style.display = "block";
                     success_msg_container.style.display = "none";
@@ -144,8 +141,65 @@ if(contactForm) {
             .catch(e => {
                 console.error('Contact save error ' , e);
                 // show flash error
+                form_err_container.style.display = "block";
+                setTimeout(showAndHideErrMsg, 5000);
             });
         });
     });
 };
 
+if(hireForm) {
+    hireBtn.addEventListener("click", (e) => {
+      hireForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        hireBtn.innerHTML = "submitting...";
+        // change btn value to spiner or show global body spinning container
+
+        // make a fetch request to save data in the database
+        let EFN = employer_name.value.trim();
+        let ECPM = employer_company.value.trim();
+        let EEMAIL = employer_email.value.trim();
+        let HBUDGET = budget.value.trim();
+        let HTFRAME = timeframe.value.trim();
+
+        let payload = {
+          employer_name: EFN,
+          employer_email: EEMAIL,
+          budget: HBUDGET,
+          launch_timeframe: HTFRAME,
+          employer_company: ECPM,
+        };
+
+        fetch("/b/hire", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        })
+          .then((res) => {
+            // check if res.ok = true, remove spinning container
+            // else show failed notification or contine spining
+            return res.json();
+          })
+          .then((finalRes) => {
+            //show success message container and hide form container
+            if (finalRes.success === true) {
+              hireForm.style.display = "none";
+              success_msg_container.style.display = "block";
+            } else {
+              form_err_container.style.display = "block";
+              hireForm.style.display = "block";
+              success_msg_container.style.display = "none";
+              setTimeout(showAndHideErrMsg, 5000);
+            }
+          })
+          .catch((e) => {
+            console.error("Hire request save error ", e);
+            // show flash error
+            form_err_container.style.display = "block";
+            setTimeout(showAndHideErrMsg, 5000);
+          });
+      });
+    });
+};

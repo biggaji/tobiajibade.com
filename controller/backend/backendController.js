@@ -52,11 +52,6 @@ const hireControl = async (req, res) => {
         res.status(500).json({ "server-error": true, "success": false });
     }
     ;
-    // res.status(200).json({
-    //   message: "Data received",
-    //   success: true,
-    //   data: [employer_name, employer_email, employer_company, price, timeframe],
-    // });
 };
 exports.hireControl = hireControl;
 const contactControl = async (req, res) => {
@@ -75,10 +70,6 @@ const contactControl = async (req, res) => {
         console.log(`Failed to process contact form : `, e.message);
         res.status(500).json({ "server-error": true, success: false });
     }
-    // res.status(200).json({
-    //     "message" : "Data received",
-    //     "success": true,
-    //     "data" : [fullname, email, message]
-    // });
+    ;
 };
 exports.contactControl = contactControl;
