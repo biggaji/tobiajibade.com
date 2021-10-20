@@ -128,4 +128,17 @@ body {
 .form-error-UI {
   display: none;
 }
+
+.spinning-circle {
+  display: none;
+}
+
+.contact-submit, .hire-submit {
+  width: 180px;
+  text-align: center;
+  padding: 0.3rem;
+  background-color: #3AA0DA;
+  color: #fff;
+  border-radius: 3px;
+}
 /*# sourceMappingURL=main.css.map */

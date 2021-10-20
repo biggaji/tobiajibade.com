@@ -85,6 +85,7 @@ let success_msg_container = document.querySelector(".success-msg-container");
 let form_err_container = document.querySelector('.form-error-UI');
 let error_text = document.querySelector(".error-text");
 error_text.innerHTML = "Failed to send message, try again!";
+let spinning_circle = document.querySelector('.spinning-circle');
 // function to show and hide form error message after five seconds
 function showAndHideErrMsg() {
     form_err_container.style.display = "none";
@@ -94,7 +95,8 @@ if (contactForm) {
     contactSubmitBtn.addEventListener("click", (e) => {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            contactSubmitBtn.innerHTML = "submitting...";
+            contactSubmitBtn.style.display = "none";
+            spinning_circle.style.display = "block";
             // change btn value to spiner or show global body spinning container
             // make a fetch request to save data in the database
             let CFN = contactFullname.value.trim();
@@ -145,7 +147,8 @@ if (hireForm) {
     hireBtn.addEventListener("click", (e) => {
         hireForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            hireBtn.innerHTML = "submitting...";
+            hireBtn.style.display = "none";
+            spinning_circle.style.display = "block";
             // change btn value to spiner or show global body spinning container
             // make a fetch request to save data in the database
             let EFN = employer_name.value.trim();

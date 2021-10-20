@@ -11,9 +11,9 @@ import compression from 'compression';
 
 const app = express();
 
+app.use(compression());
 app.use(express.urlencoded({ extended : false }));
 app.use(express.json());
-app.use(compression())
 app.use(express.static(path.join(__dirname, "public")));
 
 app.engine("hbs", exphbs({defaultLayout: "main", extname: "hbs"}));

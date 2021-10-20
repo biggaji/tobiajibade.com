@@ -136,6 +136,9 @@ body {
 .form-error-UI {
     display: none;
 }
+.spinning-circle {
+    display: none;
+}
 
 // .hire-submit {
 //     width: 300px;
@@ -144,3 +147,12 @@ body {
 //   background-size: 1em 1em;
 //   background-position: center center;
 // }
+
+.contact-submit, .hire-submit {
+    width: 180px;
+    text-align: center;
+    padding: 0.3rem;
+    background-color: $cta-bg-color;
+    color: #fff;
+    border-radius: 3px;
+}

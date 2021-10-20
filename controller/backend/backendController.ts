@@ -37,8 +37,6 @@ export const hireControl = async (req:Request, res:Response) => {
 
     try {
        let saveHireRequest = await dbcontrol.processHireRequest(employer_name, employer_email, price, employer_company, timeframe);
-
-       console.log(saveHireRequest)
         if(saveHireRequest) {
           res.status(201).json({"success": true});
         } else {
