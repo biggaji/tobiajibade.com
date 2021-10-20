@@ -253,6 +253,9 @@
             {{>contact_cta_component}}
     {{!-- overlay container for contact form --}}
     <section class="contact-form-overlay-container">
+        <div class="form-error-UI">
+            <span class="error-text"></span>
+        </div>
         <div class="contact-form-container">
             <span class="form-requirement-text">Please fill out the following fields</span>
             <form action="/b/contact" method="post" class="contact-form">
@@ -275,5 +278,19 @@
                     <button type="submit" class="contact-submit">Send message</button>
                 </div>
             </form>
+
+            {{!-- success message display --}}
+            <div class="success-msg-container">
+                <span class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path fill-rule="evenodd"
+                            d="M21.03 5.72a.75.75 0 010 1.06l-11.5 11.5a.75.75 0 01-1.072-.012l-5.5-5.75a.75.75 0 111.084-1.036l4.97 5.195L19.97 5.72a.75.75 0 011.06 0z">
+                        </path>
+                    </svg>
+                </span>
+                <p class="success-text">Your message has been sent successfully.</p>
+                <p>I will contact you ASAP. Thanks Tobi!</p>
+            </div>
         </div>
     </section>

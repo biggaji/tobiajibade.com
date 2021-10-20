@@ -35,7 +35,8 @@
     "test": "mocha || true",
     "devstart": "nodemon app.ts",
     "start": "node app.js",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "build-dev": "tsc -p . -w"
   },
   "repository": {
     "type": "git",
