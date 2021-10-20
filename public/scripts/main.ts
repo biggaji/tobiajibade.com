@@ -86,3 +86,66 @@ if(allHireRequiredFields) {
  * Method to make ajax request to submit form on click
  */
 
+let success_msg_container = document.querySelector(".success-msg-container") as HTMLDivElement;
+let form_err_container = document.querySelector('.form-error-UI') as HTMLDivElement;
+let error_text = document.querySelector(".error-text") as HTMLSpanElement;
+
+// function to show and hide form error message after five seconds
+
+function showAndHideErrMsg() {
+    form_err_container.style.display = "none";
+};
+
+if(contactForm) {
+    contactSubmitBtn.addEventListener("click", (e) => {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // console.log(location.hostname);
+            contactSubmitBtn.innerHTML = "submitting..."
+            // change btn value to spiner or show global body spinning container
+
+            // make a fetch request to save data in the database
+            let CFN = contactFullname.value.trim();
+            let CEM = contactemail.value.trim();
+            let CMSG = contactmessage.value.trim();
+            let payload = {
+                fullname: CFN,
+                email: CEM,
+                message: CMSG
+            };
+
+            fetch('/b/contact', {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                // console.log(res)
+                // check if res.ok = true, remove spinning container
+                // else show failed notification or contine spining
+                return res.json();
+            })
+            .then(finalRes => {
+                console.log(finalRes)
+                //show success message container and hide form container
+                if(finalRes.success === true) {
+                    contactForm.style.display = "none";
+                    success_msg_container.style.display = "block";
+                } else {
+                    error_text.innerHTML = 'Failed to send message, try again!';
+                    form_err_container.style.display = "block";
+                    contactForm.style.display = "block";
+                    success_msg_container.style.display = "none";
+                    setTimeout(showAndHideErrMsg, 5000);
+                };
+            })
+            .catch(e => {
+                console.error('Contact save error ' , e);
+                // show flash error
+            });
+        });
+    });
+};
+

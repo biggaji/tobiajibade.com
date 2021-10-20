@@ -120,4 +120,12 @@ body {
   content: "\201E";
   right: 0;
 }
+
+.success-msg-container {
+  display: none;
+}
+
+.form-error-UI {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */
