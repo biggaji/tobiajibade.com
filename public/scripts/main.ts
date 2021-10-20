@@ -89,8 +89,10 @@ if(allHireRequiredFields) {
 let success_msg_container = document.querySelector(".success-msg-container") as HTMLDivElement;
 let form_err_container = document.querySelector('.form-error-UI') as HTMLDivElement;
 let error_text = document.querySelector(".error-text") as HTMLSpanElement;
-error_text.innerHTML = "Failed to send message, try again!";
 let spinning_circle = document.querySelector('.spinning-circle') as HTMLImageElement;
+if(error_text) {
+    error_text.innerHTML = "Failed to send message, try again!";
+};
 
 // function to show and hide form error message after five seconds
 
@@ -206,3 +208,8 @@ if(hireForm) {
       });
     });
 };
+
+
+// set the current year we're in
+let currentYear:any = document.querySelector('#currentYear');
+currentYear.innerHTML = new Date().getFullYear();
