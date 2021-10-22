@@ -1,20 +1,20 @@
 <main class="global-container">
     <section class="hmfc">
         <div class="form-error-UI">
-            <span class="error-text"></span>
+            <span class="error-text">Some error occured</span>
         </div>
         <form action="/b/hire" method="post" class="hire-form">
             <p class="user-greeting">Hey Tobi!</p>
             <p class="input-sentence">
                 <label for="employer_name">My name is </label><input type="text" name="employer_name" id="employer_name" placeholder="Your fullname">, I work at <input type="text"
                  name="employer_company" placeholder="Your Company name" id="employer_company">
-                 company, and we would like you to work on our project as a back-end engineer. Our project aims to launch in <select name="launch_timeframe" id="timeframe">
+                 company, and we would like you to work on our project as a back-end engineer. Our project aims to launch in <select name="launch_timeframe" id="timeframe" required=true>
                 <option>Choose a time frame</option>
                 <option value="less_than_1m">less than 1 month</option>
                 <option value="btw_1-2m">between 1 - 2 months</option>
                 <option value="more_than_2m">more than 2 months</option>
                 </select> and we have a budget of 
-                <select name="budget" id="budget">
+                <select name="budget" id="budget" required>
                     <option>Choose a budget</option>
                     <option value="five-one">$500 - $1000</option>
                     <option value="one-five">$1000 - $5000</option>
@@ -42,7 +42,7 @@
                 </svg>
             </span>
             <p class="success-text">Your message has been sent successfully.</p>
-             <p>I will contact you ASAP. Thanks Tobi!</p>
+             <p class="success-text">I will contact you ASAP. Thanks Tobi!</p>
         </div>
     </section>
 </main>

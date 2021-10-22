@@ -101,19 +101,27 @@ body {
   font-size: 22px;
   font-weight: 600;
   color: #111;
-  margin: 0.7rem 0.5rem;
-}
-
-.success-msg-container {
-  display: none;
+  margin: 0.7rem 0.6rem;
 }
 
 .form-error-UI {
   display: none;
+  width: 100%;
+  border: 1px solid tomato;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.form-error-UI .error-text {
+  font-size: 15px;
 }
 
 .spinning-circle {
   display: none;
+  text-align: center;
+  width: 23px;
+  height: 23px;
 }
 
 .required-red {
@@ -129,9 +137,35 @@ body {
   border-bottom: 3px solid limegreen;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button {
+  cursor: pointer;
+}
+
 .hero {
   width: 100%;
   height: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero .hero-copy-box {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-top: 1rem;
 }
 
 .hero .hero-copy-box .hero-title-container .hero-title {
@@ -249,11 +283,22 @@ body {
           filter: grayscale(0%);
 }
 
+.hero .hero-image-container {
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .hero .hero-image-container img {
   -o-object-fit: contain;
      object-fit: contain;
-  width: 0;
-  height: 0;
+  width: 250px;
+  height: 250px;
 }
 
 .about-container {
@@ -546,8 +591,9 @@ body {
 .contact-form-overlay-container {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: #fff;
   display: none;
+  color: #6b6969;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -559,33 +605,94 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+  padding: 1.5rem;
+  -webkit-transition: display 0.2s linear 0;
+  transition: display 0.2s linear 0;
+  z-index: 2;
 }
 
 .contact-form-overlay-container .form-error-UI {
   width: 100%;
 }
 
+.contact-form-overlay-container .close-btn-wrapper {
+  width: 100%;
+  height: auto;
+  padding: 0.4rem 0.2rem;
+  margin: 0.3rem 0;
+  position: relative;
+}
+
+.contact-form-overlay-container .close-btn-wrapper #closeBtn {
+  float: right;
+  height: 23px;
+  width: 23px;
+  fill: #6b6969;
+  cursor: pointer;
+  top: 0;
+}
+
 .contact-form-overlay-container .contact-form-container {
+  margin: 1rem 0;
   width: 100%;
 }
 
 .contact-form-overlay-container .contact-form-container .form-requirement-text, .contact-form-overlay-container .contact-form-container .isrequired {
-  font-size: 16px;
-  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.contact-form-overlay-container .contact-form-container .contact-form {
+  width: 100%;
+}
+
+.contact-form-overlay-container .contact-form-container .contact-form .input-clip {
+  width: 100%;
+  margin: 0.8rem 0;
 }
 
 .contact-form-overlay-container .contact-form-container .contact-form .input-clip label {
   width: 100%;
+  font-size: 0.95rem;
   font-family: "Atyp text", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .contact-form-overlay-container .contact-form-container .contact-form .input-clip input, .contact-form-overlay-container .contact-form-container .contact-form .input-clip textarea {
+  border-radius: 3px;
+  border: 0.5px solid #111;
+  margin: 0.3rem 0;
   width: 100%;
+  padding: 0.5rem 0.3rem;
+  font-size: 0.95rem;
   font-family: "Atyp text", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .contact-form-overlay-container .contact-form-container .contact-form .btn-clip {
   width: 100%;
+  margin: 0.5rem 0;
+  background-color: #057bc0;
+  padding: 0.6rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 3px;
+}
+
+.contact-form-overlay-container .contact-form-container .contact-form .btn-clip .contact-submit {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-family: "Atyp text", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
 }
 
 footer {
@@ -599,12 +706,12 @@ footer .footer-items {
 }
 
 footer .footer-items .coder-info {
-  font-size: 15px;
+  font-size: 1rem;
   margin: 0.5rem 0 1rem 0;
 }
 
 footer .footer-items .legal-copy {
-  font-size: 15px;
+  font-size: 1rem;
   margin: 0 0 1rem 0;
 }
 
@@ -614,15 +721,25 @@ footer .footer-items .legal-copy {
   height: auto;
 }
 
+.hmfc .hire-form .user-greeting {
+  font-size: 1rem;
+}
+
+.hmfc .hire-form .fareware-greeting {
+  font-size: 1rem;
+}
+
 .hmfc .hire-form .input-sentence {
   width: 100%;
-  margin: 0.2rem 0;
+  margin: 0.4rem 0;
+  font-size: 1rem;
 }
 
 .hmfc .hire-form .input-sentence input {
   border: none;
+  width: 100%;
   border-bottom: 1px solid #6b6969;
-  padding: 0.4rem 0.5rem;
+  padding: 0.4rem;
   font-size: 1rem;
   color: #6b6969;
   outline: none;
@@ -636,7 +753,7 @@ footer .footer-items .legal-copy {
   border-bottom: 1px solid #6b6969;
   font-size: 1rem;
   color: #6b6969;
-  padding: 0.4rem 0.5rem;
+  padding: 0.4rem;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -647,7 +764,19 @@ footer .footer-items .legal-copy {
   width: 100%;
   margin: 0.5rem 0;
   background-color: #057bc0;
+  padding: 0.6rem;
+  text-align: center;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 3px;
 }
 
 .hmfc .hire-form .hire-submit-box .hire-submit {
@@ -655,16 +784,60 @@ footer .footer-items .legal-copy {
   background-color: transparent;
   color: #fff;
   text-align: center;
-  font-weight: 500;
-  font-size: 17px;
-  padding: 0.6rem 0.5rem;
-  border-radius: 3px;
+  font-weight: 600;
+  font-size: 1rem;
   border: none;
+  font-family: "Atyp text", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .fof_container {
   width: 100%;
-  border: 1px solid red;
-  height: 90%;
+  height: 100%;
+  margin: 4rem auto;
+  padding: 1rem 0.5rem;
+}
+
+.fof_container .upper_center {
+  display: block;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #6b6969;
+}
+
+.fof_container .fof_big_text {
+  display: block;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.fof_container .error_info_text {
+  margin: 1.5rem 0;
+  display: block;
+  text-align: center;
+}
+
+.fof_container .redirect_cta_text {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.success-msg-container {
+  display: none;
+  text-align: center;
+  margin: 1rem 0.5rem;
+  padding: 1rem 0.5rem;
+}
+
+.success-msg-container .success-icon svg {
+  width: 35px;
+  height: 50px;
+  font-size: 5rem;
+}
+
+.success-msg-container .success-text {
+  text-align: center;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
