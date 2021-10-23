@@ -22,7 +22,7 @@ app.set("view engine", "hbs");
 app.use("/", indexRouter);
 app.use("/B", backendRouter);
 app.use((req:Request, res:Response, next: NextFunction) => {
-    res.render("pages/404", { page_name : "404 - Not found"});
+    res.render("pages/404", { page_name : "Page Not found"});
 });
 
 const PORT = process.env.PORT || 5000;

@@ -25,7 +25,7 @@ app.set("view engine", "hbs");
 app.use("/", index_1.indexRouter);
 app.use("/B", backendRouters_1.backendRouter);
 app.use((req, res, next) => {
-    res.render("pages/404", { page_name: "404 - Not found" });
+    res.render("pages/404", { page_name: "Page Not found" });
 });
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

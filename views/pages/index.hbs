@@ -1,5 +1,5 @@
 <main class="global-container">
-    <section class="hero content-container">
+    <section class="hero content-container d-flex">
         <div class="hero-copy-box">
             <div class="hero-title-container">
                 <h1 class="hero-title recoleta-bold">Hi, I'm Tobi Ajibade</h1>
@@ -57,8 +57,12 @@
 
         </div>
 
-        <div class="hero-image-container">
-            {{!-- <img src="" alt=""> --}}
+        <div class="hero-image-container d-flex">
+            <picture>
+                <source srcset="/images/avatar.webp" type="image/webp">
+                <source srcset="/images/avatar.jpeg" type="image/jpeg">
+                <img src="/images/avatar.jpeg" alt="Tobi Ajibade Avatar">
+            </picture>
         </div>
     </section>
 
@@ -340,6 +344,14 @@
         <div class="form-error-UI">
             <span class="error-text"></span>
         </div>
+        <div class="close-btn-wrapper">
+            <svg id="closeBtn" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16" width="16" height="16">
+                <path fill-rule="evenodd"
+                    d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                </path>
+            </svg>
+        </div>
         <div class="contact-form-container">
             <span class="form-requirement-text">Please fill out the following fields</span>
             <form action="/b/contact" method="post" class="contact-form">
@@ -356,9 +368,9 @@
                 <div class="input-clip">
                     <label for="msg">Message <span
                             class="required-red">*</span></label><br>
-                    <textarea id="msg" name="message" class="required-field contact-message" rows="7"></textarea>
+                    <textarea id="msg" name="message" class="required-field contact-message" rows="4"></textarea>
                 </div>
-                <div class="btn-clip" style="background-color: red;">
+                <div class="btn-clip">
                     <button type="submit" class="contact-submit">Send message</button>
                     <img src="/images/spinning-circles.svg" alt="spinnig-circle" loading=lazy width="25px" height="25px" class="spinning-circle">
                 </div>
@@ -375,7 +387,7 @@
                     </svg>
                 </span>
                 <p class="success-text">Your message has been sent successfully.</p>
-                <p>I will contact you ASAP. Thanks Tobi!</p>
+                <p class="success-text">I will contact you ASAP. Thanks Tobi!</p>
             </div>
         </div>
     </section>

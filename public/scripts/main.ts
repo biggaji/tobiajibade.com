@@ -63,16 +63,16 @@ if(hireBtn) {
     hireBtn.disabled = true;
 };
 
-let allHireRequiredFields:any[] = [];
+let allHireRequiredInputFields:any[] = [];
 
-if(allHireRequiredFields) {
+if(allHireRequiredInputFields) {
     if(hireForm && employer_name && employer_email && employer_company && budget && timeframe) {
-        allHireRequiredFields.push(employer_company, employer_email, employer_name, budget, timeframe);
+        allHireRequiredInputFields.push(employer_company, employer_email, employer_name);
     }
     
-    allHireRequiredFields.forEach(elem => {
-        elem.addEventListener("change", () => {
-            let isNotEmpty = allHireRequiredFields.every(checkForEmptyFields);
+    allHireRequiredInputFields.forEach(elem => {
+        elem.addEventListener("input", () => {
+            let isNotEmpty = allHireRequiredInputFields.every(checkForEmptyFields);
                 if(isNotEmpty) {
                     hireBtn.disabled = false;
                 } else {
@@ -213,3 +213,30 @@ if(hireForm) {
 // set the current year we're in
 let currentYear:any = document.querySelector('#currentYear');
 currentYear.innerHTML = new Date().getFullYear();
+
+// openand close trigger btn for contact form
+
+let openContactModal = document.querySelector(".contact-me") as HTMLAnchorElement;
+let closeContactModal = document.querySelector("#closeBtn") as HTMLElement;
+let ContactModal = document.querySelector(".contact-form-overlay-container") as HTMLElement;
+
+function closeModal() {
+    ContactModal.style.display = "none";
+}
+
+function openModal() {
+    ContactModal.style.display = "block";
+}
+// open modal
+if(openContactModal) {
+    openContactModal.addEventListener("click", () => {
+        openModal();
+    });
+};
+
+// close modal
+if(closeContactModal) {
+    closeContactModal.addEventListener("click", () => {
+        closeModal();
+    });
+};
