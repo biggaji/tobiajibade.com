@@ -321,8 +321,8 @@ header {
         }
         &::after {
           content: "\201E";
-          right: 0.8rem;
-          bottom: -1rem;
+          right: 0.7.4rem;
+          bottom: -1.5rem;
         }
       }
       .testimonial-user {
@@ -366,6 +366,7 @@ header {
   .hire-cta-container {
     width: 90%;
     margin: 0 auto;
+    vertical-align: middle;
     .hire-cta-text {
       font-weight: 500;
     }
@@ -397,6 +398,7 @@ header {
   }
   .contact-cta-container {
     width: 90%;
+    vertical-align: middle;
     margin: 1rem auto;
     .contact-cta-text {
       font-weight: 500;
@@ -714,18 +716,60 @@ footer {
 }
 
 @media screen and (min-width: 320px) {
+  
 }
 
 @media screen and (min-width: 400px) {
+  .testimonials {
+    .testimonial-card-container {
+      .testimonial-card {
+        width: 90%;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 600px) {
 }
 
 @media screen and (min-width: 800px) {
+  .testimonials {
+    .testimonial-card-container {
+      .testimonial-card {
+        width: 75%;
+      }
+    }
+  }
+
+  .contact-cta-box {
+    vertical-align: middle;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 4rem auto;
+    .divider {
+      display: block ;
+      margin: 0 2rem;
+    }
+  }
+
+  .contact-form-overlay-container {
+    .contact-form-container {
+      width: 45%;
+    }
+  }
+
+  .hmfc {
+    width: 45%;
+    margin: 1rem auto ;
+  }
 }
 
 @media screen and (min-width: 1020px) {
+  .global-container {
+    padding: 0 10%;
+  }
   .hero {
     width: 100%;
     justify-content: flex-start;
@@ -838,7 +882,6 @@ footer {
       display: block ;
       margin: 0 2rem;
     }
-  
   }
 
   .techstack-container {

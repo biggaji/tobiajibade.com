@@ -402,8 +402,8 @@ header a {
 
 .testimonials .testimonial-card-container .testimonial-card .testimonial-text::after {
   content: "\201E";
-  right: 0.8rem;
-  bottom: -1rem;
+  right: 0.7 0.4rem;
+  bottom: -1.5rem;
 }
 
 .testimonials .testimonial-card-container .testimonial-card .testimonial-user {
@@ -466,6 +466,7 @@ header a {
 .contact-cta-box .hire-cta-container {
   width: 90%;
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 .contact-cta-box .hire-cta-container .hire-cta-text {
@@ -502,6 +503,7 @@ header a {
 
 .contact-cta-box .contact-cta-container {
   width: 90%;
+  vertical-align: middle;
   margin: 1rem auto;
 }
 
@@ -868,7 +870,48 @@ footer .footer-items .legal-copy {
   font-size: 1rem;
 }
 
+@media screen and (min-width: 400px) {
+  .testimonials .testimonial-card-container .testimonial-card {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .testimonials .testimonial-card-container .testimonial-card {
+    width: 75%;
+  }
+  .contact-cta-box {
+    vertical-align: middle;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 80%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 4rem auto;
+  }
+  .contact-cta-box .divider {
+    display: block;
+    margin: 0 2rem;
+  }
+  .contact-form-overlay-container .contact-form-container {
+    width: 45%;
+  }
+  .hmfc {
+    width: 45%;
+    margin: 1rem auto;
+  }
+}
+
 @media screen and (min-width: 1020px) {
+  .global-container {
+    padding: 0 10%;
+  }
   .hero {
     width: 100%;
     -webkit-box-pack: start;
