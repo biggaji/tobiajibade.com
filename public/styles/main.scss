@@ -91,9 +91,11 @@ body {
 .form-error-UI {
   display: none;
   width: 100%;
-  border: 1px solid tomato;
+  // border: 1px solid tomato;
   border-radius: 4px;
   padding: 0.5rem;
+  background-color: rgb(242, 132, 113);
+  color: $primary-color;
   margin: 1rem 0;
   .error-text {
     font-size: 15px;
@@ -855,7 +857,6 @@ footer {
         &::after {
           content: "";
           position: absolute;
-          // z-index: 1;
           left: 30px;
           bottom: -10px;
           width: 5px;
@@ -865,6 +866,17 @@ footer {
         }
       }
     }
+  }
+
+  .contact-form-overlay-container {
+    .contact-form-container {
+      width: 45%;
+    }
+  }
+
+  .hmfc {
+    width: 45%;
+    margin: 1rem auto ;
   }
 
   .h-line {

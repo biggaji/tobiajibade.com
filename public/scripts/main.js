@@ -132,6 +132,8 @@ if (contactForm) {
                     form_err_container.style.display = "block";
                     contactForm.style.display = "block";
                     success_msg_container.style.display = "none";
+                    contactSubmitBtn.style.display = "block";
+                    spinning_circle.style.display = "none";
                     setTimeout(showAndHideErrMsg, 5000);
                 }
                 ;
@@ -140,6 +142,8 @@ if (contactForm) {
                 console.error('Contact save error ', e);
                 // show flash error
                 form_err_container.style.display = "block";
+                contactSubmitBtn.style.display = "block";
+                spinning_circle.style.display = "none";
                 setTimeout(showAndHideErrMsg, 5000);
             });
         });
@@ -188,6 +192,8 @@ if (hireForm) {
                     form_err_container.style.display = "block";
                     hireForm.style.display = "block";
                     success_msg_container.style.display = "none";
+                    hireBtn.style.display = "block";
+                    spinning_circle.style.display = "none";
                     setTimeout(showAndHideErrMsg, 5000);
                 }
             })
@@ -195,6 +201,8 @@ if (hireForm) {
                 console.error("Hire request save error ", e);
                 // show flash error
                 form_err_container.style.display = "block";
+                hireBtn.style.display = "block";
+                spinning_circle.style.display = "none";
                 setTimeout(showAndHideErrMsg, 5000);
             });
         });
@@ -212,7 +220,7 @@ function closeModal() {
     ContactModal.style.display = "none";
 }
 function openModal() {
-    ContactModal.style.display = "block";
+    ContactModal.style.display = "flex";
 }
 // open modal
 if (openContactModal) {

@@ -101,9 +101,10 @@ body {
 .form-error-UI {
   display: none;
   width: 100%;
-  border: 1px solid tomato;
   border-radius: 4px;
   padding: 0.5rem;
+  background-color: #f28471;
+  color: #111;
   margin: 1rem 0;
 }
 
@@ -1034,6 +1035,13 @@ footer .footer-items .legal-copy {
     height: 5px;
     background-color: #057bc0;
     border-radius: 100%;
+  }
+  .contact-form-overlay-container .contact-form-container {
+    width: 45%;
+  }
+  .hmfc {
+    width: 45%;
+    margin: 1rem auto;
   }
   .h-line {
     max-width: 100%;

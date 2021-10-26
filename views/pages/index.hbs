@@ -101,7 +101,6 @@
             <p class="subtitle">
                 I'm pro-efficient in using these tools and technologies:
             </p>
-            
             <div class="techstack-list-flex d-flex">
                 <div class="techstack-lists">
                         <img src="/images/nodejs-icon.svg" alt="nodejs" loading="lazy">
@@ -401,6 +400,7 @@
             {{>contact_cta_component}}
     {{!-- overlay container for contact form --}}
     <section class="contact-form-overlay-container">
+        <div class="contact-form-container">
         <div class="form-error-UI">
             <span class="error-text"></span>
         </div>
@@ -412,7 +412,6 @@
                 </path>
             </svg>
         </div>
-        <div class="contact-form-container">
             <span class="form-requirement-text">Please fill out the following fields</span>
             <form action="/b/contact" method="post" class="contact-form">
                 <span class="isrequired">Fields marked with (<span class="required-red">*</span>) are required</span>
@@ -447,7 +446,7 @@
                     </svg>
                 </span>
                 <p class="success-text">Your message has been sent successfully.</p>
-                <p class="success-text">I will contact you ASAP. Thanks Tobi!</p>
+                <p class="success-text">I will contact you ASAP.<br> Thanks Tobi!</p>
             </div>
         </div>
     </section>
