@@ -388,9 +388,9 @@ header {
     }
   }
   .divider {
-    width: 1px;
-    height: 15px;
-    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    width: 0.5px;
+    height: 150px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
     display: none;
   }
   .contact-cta-container {
@@ -822,6 +822,29 @@ footer {
       justify-content: space-evenly;
       .testimonial-card {
         width: 30%;
+      }
+    }
+  }
+  
+  
+  .contact-cta-box {
+    width: 80%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 4rem auto;
+    .divider {
+      display: block ;
+      margin: 0 2rem;
+    }
+  }
+  .h-line {
+    max-width: 100%;
+  }
+
+  footer {
+    .footer-items {
+      .coder-info, .legal-copy {
+        font-size: 15px;
       }
     }
   }

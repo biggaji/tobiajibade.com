@@ -493,9 +493,9 @@ header a {
 }
 
 .contact-cta-box .divider {
-  width: 1px;
-  height: 15px;
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  width: 0.5px;
+  height: 150px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
   display: none;
 }
 
@@ -990,6 +990,27 @@ footer .footer-items .legal-copy {
   }
   .testimonials .testimonial-card-container .testimonial-card {
     width: 30%;
+  }
+  .contact-cta-box {
+    width: 80%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 4rem auto;
+  }
+  .contact-cta-box .divider {
+    display: block;
+    margin: 0 2rem;
+  }
+  .h-line {
+    max-width: 100%;
+  }
+  footer .footer-items .coder-info, footer .footer-items .legal-copy {
+    font-size: 15px;
   }
 }
 /*# sourceMappingURL=main.css.map */
