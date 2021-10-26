@@ -980,5 +980,16 @@ footer .footer-items .legal-copy {
   .projects-portfolio .project-overview .project-lists .project-card .project-links {
     margin: 0.5rem 0 0 0;
   }
+  .testimonials .testimonial-card-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .testimonials .testimonial-card-container .testimonial-card {
+    width: 30%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
