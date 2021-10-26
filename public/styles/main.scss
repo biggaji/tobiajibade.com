@@ -815,6 +815,16 @@ footer {
         }
       }
   }
+
+  .testimonials {
+    .testimonial-card-container {
+      display: flex;
+      justify-content: space-evenly;
+      .testimonial-card {
+        width: 30%;
+      }
+    }
+  }
 }
 
 
