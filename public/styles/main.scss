@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   // border: 0;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -25,6 +26,16 @@
   font-family: Recoleta-bold;
   src: url("./../fonts/Recoleta-Bold.woff2") format("woff2");
   font-display: swap;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
 body {

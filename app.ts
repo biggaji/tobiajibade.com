@@ -6,7 +6,6 @@ import  express, { NextFunction, Request, Response } from 'express';
 import  exphbs from 'express-handlebars';
 import path from 'path';
 import { indexRouter } from './routes/index';
-import { backendRouter } from './routes/backend/backendRouters';
 import compression from 'compression';
 
 const app = express();
@@ -20,7 +19,6 @@ app.engine("hbs", exphbs({defaultLayout: "main", extname: "hbs"}));
 app.set("view engine", "hbs");
 
 app.use("/", indexRouter);
-app.use("/B", backendRouter);
 app.use((req:Request, res:Response, next: NextFunction) => {
     res.render("pages/404", { page_name : "Page Not found"});
 });
