@@ -1,6 +1,8 @@
-FROM node:14.8.1-alpine
+FROM node:16.12.0-alpine
 WORKDIR /app
 ADD package*.json ./
 RUN npm ci
+RUN npm run build
+EXPOSE 5000
 ADD . .
 CMD npm run start
