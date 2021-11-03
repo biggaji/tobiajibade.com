@@ -117,41 +117,41 @@ if(contactForm) {
                 email: CEM,
                 message: CMSG
             };
-
-            fetch('/b/contact', {
-                method: "POST",
-                headers: {
-                    "Content-Type" : "application/json"
-                },
-                body: JSON.stringify(payload)
+            fetch('http://0.0.0.0:43001/control/contact', {
+              method: "POST",
+              mode: "cors",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
             })
-            .then(res => {
+              .then((res) => {
                 // check if res.ok = true, remove spinning container
                 // else show failed notification or contine spining
                 return res.json();
-            })
-            .then(finalRes => {
+              })
+              .then((finalRes) => {
                 //show success message container and hide form container
-                if(finalRes.success === true) {
-                    contactForm.style.display = "none";
-                    success_msg_container.style.display = "block";
+                if (finalRes.success === true) {
+                  contactForm.style.display = "none";
+                  success_msg_container.style.display = "block";
                 } else {
-                    form_err_container.style.display = "block";
-                    contactForm.style.display = "block";
-                    success_msg_container.style.display = "none";
-                    contactSubmitBtn.style.display = "block";
-                    spinning_circle.style.display = "none";
-                    setTimeout(showAndHideErrMsg, 5000);
-                };
-            })
-            .catch(e => {
-                console.error('Contact save error ' , e);
+                  form_err_container.style.display = "block";
+                  contactForm.style.display = "block";
+                  success_msg_container.style.display = "none";
+                  contactSubmitBtn.style.display = "block";
+                  spinning_circle.style.display = "none";
+                  setTimeout(showAndHideErrMsg, 5000);
+                }
+              })
+              .catch((e) => {
+                console.error("Contact save error ", e);
                 // show flash error
                 form_err_container.style.display = "block";
                 contactSubmitBtn.style.display = "block";
                 spinning_circle.style.display = "none";
                 setTimeout(showAndHideErrMsg, 5000);
-            });
+              });
         });
     });
 };
@@ -179,8 +179,9 @@ if(hireForm) {
           employer_company: ECPM,
         };
 
-        fetch("/b/hire", {
+        fetch("http://0.0.0.0:43001/control/hire", {
           method: "POST",
+          mode: "cors",
           headers: {
             "Content-Type": "application/json",
           },

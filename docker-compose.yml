@@ -10,6 +10,11 @@ services:
     image: biggaji/tobiajibade_backend:latest
     ports:
       - "43001:43001"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=$DATABASE_URL
+      - MAIL_USER=$MAIL_USER
+      - MAIL_PASS=$MAIL_PASS
       
 volumes:
   updates:
