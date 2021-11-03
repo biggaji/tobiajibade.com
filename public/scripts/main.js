@@ -110,19 +110,20 @@ if (contactForm) {
                 email: CEM,
                 message: CMSG
             };
-            fetch('/b/contact', {
+            fetch('http://0.0.0.0:43001/control/contact', {
                 method: "POST",
+                mode: "cors",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload),
             })
-                .then(res => {
+                .then((res) => {
                 // check if res.ok = true, remove spinning container
                 // else show failed notification or contine spining
                 return res.json();
             })
-                .then(finalRes => {
+                .then((finalRes) => {
                 //show success message container and hide form container
                 if (finalRes.success === true) {
                     contactForm.style.display = "none";
@@ -136,10 +137,9 @@ if (contactForm) {
                     spinning_circle.style.display = "none";
                     setTimeout(showAndHideErrMsg, 5000);
                 }
-                ;
             })
-                .catch(e => {
-                console.error('Contact save error ', e);
+                .catch((e) => {
+                console.error("Contact save error ", e);
                 // show flash error
                 form_err_container.style.display = "block";
                 contactSubmitBtn.style.display = "block";
@@ -170,8 +170,9 @@ if (hireForm) {
                 launch_timeframe: HTFRAME,
                 employer_company: ECPM,
             };
-            fetch("/b/hire", {
+            fetch("http://0.0.0.0:43001/control/hire", {
                 method: "POST",
+                mode: "cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
