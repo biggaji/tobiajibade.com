@@ -6,6 +6,7 @@ services:
       - "5000:5000"
     volumes:
       - updates:/app
+    restart: always
   backend:
     image: biggaji/tobiajibade_backend:latest
     ports:
