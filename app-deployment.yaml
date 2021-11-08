@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tobiajibade-deploy
+  labels:
+    app: tobiajibade
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tobiajibade
+  template:
+    metadata:
+      labels:
+        app: tobiajibade
+      spec:
+        containers:
+        - name: web
+          image: biggaji/tobiajibade:latest
+          ports:
+          - containerPort: 5000
