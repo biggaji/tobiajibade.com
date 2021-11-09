@@ -1,19 +1,26 @@
+# A deployment is used to create a pod, and it's a object that can represent a running application in a cluster.
+# Note: specs are specific to the object type and also it nested objects 
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+# metadata for deployment
+metadata: 
   name: tobiajibade-deploy
   labels:
     app: tobiajibade
+    #specs for deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: tobiajibade
+      # the template key is used to create a pod
   template:
     metadata:
       labels:
         app: tobiajibade
+        #spec for creating a pod
       spec:
+      # Docker container that would be deployed and run by kubernetes 
         containers:
         - name: web
           image: biggaji/tobiajibade:latest

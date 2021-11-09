@@ -4,3 +4,4 @@ node_modules
 Dockerfile
 npm-debug.log
 app-*.yaml
+tobitest.yaml
