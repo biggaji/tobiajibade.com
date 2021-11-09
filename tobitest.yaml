@@ -1,0 +1,38 @@
+# Not to be deployed or built as a image.
+# Just for educational purposes
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    enviroment: production
+    app: webTest
+    author: "Tobi Ajibade"
+spec:
+# if replicas is not set it is default to 1
+  replicas: 2
+    # selector is required
+  selector:
+    matchLabels:
+    # used to match the labels specified in each pods template metadata
+      app: webTest
+    # template is required too
+  template:
+    metadata:
+      labels:
+        app: webTest
+    spec:
+    # a pod template spec must contain at least one container, defaults fetching to docker hub
+      containers:
+        name: nginx
+        image: nginx:12.3-apline
+        ports:
+          containerPort: 80
+        env:
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+spec:

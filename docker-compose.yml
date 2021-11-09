@@ -1,14 +1,7 @@
 version: "3.9"
 services:
-  web:
-    build: .
-    ports:
-      - "5000:5000"
-    volumes:
-      - updates:/app
-    restart: always
   backend:
-    image: biggaji/tobiajibade_backend:latest
+    image: biggaji/tobiajibade_backend:v1.0.0
     ports:
       - "43001:43001"
     environment:
@@ -16,6 +9,13 @@ services:
       - DATABASE_URL=$DATABASE_URL
       - MAIL_USER=$MAIL_USER
       - MAIL_PASS=$MAIL_PASS
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - updates:/app
+    restart: always
       
 volumes:
   updates:
