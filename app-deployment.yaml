@@ -23,6 +23,6 @@ spec:
       # Docker container that would be deployed and run by kubernetes 
         containers:
         - name: web
-          image: biggaji/tobiajibade:latest
+          image: biggaji/tobiajibadeweb:v1.0.0-beta
           ports:
           - containerPort: 5000
