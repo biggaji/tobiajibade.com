@@ -48,7 +48,7 @@ a {
             font-family: $para-font;
             font-weight: 500;
             line-height: 1.2;
-            letter-spacing: 0.025rem;
+            // letter-spacing: 0.025rem;
         }
     }
 header {
@@ -94,7 +94,7 @@ header {
         .hero_text {
             font-family: $hero-font;
             line-height: 1.2;
-            letter-spacing: 0.025rem;
+            // letter-spacing: 0.025rem;
             color:  #37352f;
             font-size: 2rem;
             padding: 20px;
@@ -106,7 +106,7 @@ header {
 
 .container {
     line-height: 1.2;
-    letter-spacing: 0.025rem;
+    // letter-spacing: 0.025rem;
     width: 100%;
     height: auto;
     // margin: 40px auto 20px auto;
@@ -146,6 +146,7 @@ header {
                     font-family: $para-font;
                     font-size: 1rem;
                     margin: 15px 0;
+                    color: #37352f;
                 }
             }
             .skill_images_container{
@@ -163,6 +164,7 @@ header {
                     .skill_name {
                         .skill_name_text {
                             font-family: $para-font;
+                            color: #37352f;
                             font-size: 0.8rem;
                         }
                     }
@@ -285,7 +287,7 @@ footer {
         }
     }
     .farewell {
-        margin: 10px 0;
+        margin: 10px 0 20px 0;
         display: flex;
         justify-content: center;
         align-items: center;
