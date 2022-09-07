@@ -2,9 +2,9 @@ name: deploy web app
 
 # Event to trigger the deploy
 on: 
-  pull_request:
+  push:
     branches:
-      - main
+      - v1
 
 jobs:
   deploy: 
