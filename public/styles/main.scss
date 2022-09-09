@@ -8,9 +8,14 @@
     src: url('../fonts/Ubuntu-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Degular';
+    src: url('../fonts/Degular_Display-Semibold.woff2');
+}
+
 // variables
- $hero-font: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- $para-font: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ $hero-font: Degular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ $para-font: Degular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  $background-color-white : #fff;
  $backround-color-gray: #ebeced;
  $border-color: 1px solid gainsboro;
@@ -115,7 +120,7 @@ header {
         padding: 20px;
         .intro_text {
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 300;
             font-family: $para-font;
             color: #37352f;
             line-height: 1.4;
@@ -229,6 +234,7 @@ header {
             margin: 6px 0;
             .contact_icon {
                 margin-right: 8px;
+                vertical-align: middle;
                 img {
                     width: 16px;
                     height: 16px;
@@ -238,6 +244,7 @@ header {
                 font-family: $para-font;
                 font-size: 0.9rem;
                 line-height: 1.4; 
+                vertical-align: top;
                 color: #37352f;
                 .mail {
                     color: #37352f;
